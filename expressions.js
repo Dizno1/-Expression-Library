@@ -35,6 +35,30 @@ const OPEN_DOOR_EXPRESSIONS = [
     keywords: ["dino", "dinosaur", "smile", "happy", "friendly", "welcome"]
   },
   {
+    id: "dino-laughing",
+    imageSrc: "assets/dinolaughing.png",
+    name: "Dino laughing",
+    meaning: "The Open Door Dino laughing with joyful amusement.",
+    subgroup: "Dino Expressions",
+    keywords: ["dino", "dinosaur", "laugh", "laughing", "joy", "funny", "happy"]
+  },
+  {
+    id: "dino-thinking",
+    imageSrc: "assets/dinothinking.png",
+    name: "Dino thinking",
+    meaning: "The Open Door Dino pausing to think, question, or consider.",
+    subgroup: "Dino Expressions",
+    keywords: ["dino", "dinosaur", "think", "thinking", "question", "consider", "curious"]
+  },
+  {
+    id: "dino-celebrating",
+    imageSrc: "assets/dinocelebrating.png",
+    name: "Dino celebrating",
+    meaning: "The Open Door Dino celebrating success, congratulations, or exciting news.",
+    subgroup: "Dino Expressions",
+    keywords: ["dino", "dinosaur", "celebrate", "party", "congratulations", "success", "confetti"]
+  },
+  {
     id: "horse-smiling",
     imageSrc: "assets/horsesmiling.png",
     name: "Horse smiling",
@@ -45,9 +69,81 @@ const OPEN_DOOR_EXPRESSIONS = [
   {
     id: "dog-smiling",
     imageSrc: "assets/dogsmiling.png",
-    name: "Dog smiling",
-    meaning: "A cheerful dog sharing a happy, affectionate smile.",
+    name: "Golden retriever smiling",
+    meaning: "A cheerful golden retriever sharing a happy, affectionate smile.",
     subgroup: "Dog Expressions",
-    keywords: ["dog", "puppy", "canine", "smile", "happy", "friendly", "pet"]
+    keywords: ["dog", "puppy", "golden retriever", "retriever", "canine", "smile", "happy", "friendly", "pet", "breed"]
+  },
+  {
+    id: "labrador-retriever-laughing",
+    imageSrc: "assets/labradorlaughing.png",
+    name: "Labrador retriever laughing",
+    meaning: "A black Labrador retriever laughing with joyful, playful energy.",
+    subgroup: "Dog Expressions",
+    keywords: ["dog", "puppy", "black lab", "labrador", "retriever", "laugh", "happy", "pet", "breed"]
+  },
+  {
+    id: "german-shepherd-thinking",
+    imageSrc: "assets/germanshepherdthinking.png",
+    name: "German shepherd thinking",
+    meaning: "A German shepherd thoughtfully considering a question or idea.",
+    subgroup: "Dog Expressions",
+    keywords: ["dog", "german shepherd", "alsatian", "thinking", "consider", "curious", "pet", "breed"]
+  },
+  {
+    id: "beagle-celebrating",
+    imageSrc: "assets/beaglecelebrating.png",
+    name: "Beagle celebrating",
+    meaning: "A joyful beagle celebrating good news with cheerful excitement.",
+    subgroup: "Dog Expressions",
+    keywords: ["dog", "beagle", "hound", "celebrate", "party", "confetti", "pet", "breed"]
+  },
+  {
+    id: "dachshund-winking",
+    imageSrc: "assets/dachshundwinking.png",
+    name: "Dachshund winking",
+    meaning: "A playful dachshund giving a friendly, mischievous wink.",
+    subgroup: "Dog Expressions",
+    keywords: ["dog", "dachshund", "sausage dog", "wiener dog", "wink", "playful", "pet", "breed"]
+  },
+  {
+    id: "arabian-horse-smiling",
+    imageSrc: "assets/arabianhorsesmiling.png",
+    name: "Arabian horse smiling",
+    meaning: "A graceful Arabian horse sharing a warm, friendly smile.",
+    subgroup: "Horse Expressions",
+    keywords: ["horse", "arabian", "equine", "smile", "friendly", "breed"]
+  },
+  {
+    id: "appaloosa-celebrating",
+    imageSrc: "assets/appaloosacelebrating.png",
+    name: "Appaloosa celebrating",
+    meaning: "A spotted Appaloosa celebrating success or exciting news.",
+    subgroup: "Horse Expressions",
+    keywords: ["horse", "appaloosa", "spotted", "equine", "celebrate", "confetti", "breed"]
+  },
+  {
+    id: "friesian-horse-laughing",
+    imageSrc: "assets/friesianlaughing.png",
+    name: "Friesian horse laughing",
+    meaning: "A black Friesian horse laughing with joyful amusement.",
+    subgroup: "Horse Expressions",
+    keywords: ["horse", "friesian", "black horse", "equine", "laugh", "joy", "breed"]
+  },
+  {
+    id: "clydesdale-welcoming",
+    imageSrc: "assets/clydesdalewelcoming.png",
+    name: "Clydesdale welcoming",
+    meaning: "A friendly Clydesdale offering a warm and reassuring welcome.",
+    subgroup: "Horse Expressions",
+    keywords: ["horse", "clydesdale", "draft horse", "equine", "welcome", "friendly", "breed"]
+  },
+  {
+    id: "shetland-pony-excited",
+    imageSrc: "assets/shetlandponyexcited.png",
+    name: "Shetland pony excited",
+    meaning: "An eager Shetland pony expressing delighted excitement.",
+    subgroup: "Horse Expressions",
+    keywords: ["horse", "pony", "shetland", "equine", "excited", "delighted", "breed"]
   }
 ];
