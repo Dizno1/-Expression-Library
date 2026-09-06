@@ -63,7 +63,7 @@ const OPEN_DOOR_EXPRESSIONS = [
     imageSrc: "assets/horsesmiling.png",
     name: "Horse smiling",
     meaning: "A friendly horse smiling warmly.",
-    subgroup: "Horse Expressions",
+    subgroup: "Horse and Equine Expressions",
     keywords: ["horse", "pony", "equine", "smile", "happy", "friendly"]
   },
   {
@@ -111,7 +111,7 @@ const OPEN_DOOR_EXPRESSIONS = [
     imageSrc: "assets/arabianhorsesmiling.png",
     name: "Arabian horse smiling",
     meaning: "A graceful Arabian horse sharing a warm, friendly smile.",
-    subgroup: "Horse Expressions",
+    subgroup: "Horse and Equine Expressions",
     keywords: ["horse", "arabian", "equine", "smile", "friendly", "breed"]
   },
   {
@@ -119,7 +119,7 @@ const OPEN_DOOR_EXPRESSIONS = [
     imageSrc: "assets/appaloosacelebrating.png",
     name: "Appaloosa celebrating",
     meaning: "A spotted Appaloosa celebrating success or exciting news.",
-    subgroup: "Horse Expressions",
+    subgroup: "Horse and Equine Expressions",
     keywords: ["horse", "appaloosa", "spotted", "equine", "celebrate", "confetti", "breed"]
   },
   {
@@ -127,7 +127,7 @@ const OPEN_DOOR_EXPRESSIONS = [
     imageSrc: "assets/friesianlaughing.png",
     name: "Friesian horse laughing",
     meaning: "A black Friesian horse laughing with joyful amusement.",
-    subgroup: "Horse Expressions",
+    subgroup: "Horse and Equine Expressions",
     keywords: ["horse", "friesian", "black horse", "equine", "laugh", "joy", "breed"]
   },
   {
@@ -135,7 +135,7 @@ const OPEN_DOOR_EXPRESSIONS = [
     imageSrc: "assets/clydesdalewelcoming.png",
     name: "Clydesdale welcoming",
     meaning: "A friendly Clydesdale offering a warm and reassuring welcome.",
-    subgroup: "Horse Expressions",
+    subgroup: "Horse and Equine Expressions",
     keywords: ["horse", "clydesdale", "draft horse", "equine", "welcome", "friendly", "breed"]
   },
   {
@@ -143,7 +143,207 @@ const OPEN_DOOR_EXPRESSIONS = [
     imageSrc: "assets/shetlandponyexcited.png",
     name: "Shetland pony excited",
     meaning: "An eager Shetland pony expressing delighted excitement.",
-    subgroup: "Horse Expressions",
+    subgroup: "Horse and Equine Expressions",
     keywords: ["horse", "pony", "shetland", "equine", "excited", "delighted", "breed"]
+  },
+  {
+    id: "dino-winking",
+    imageSrc: "assets/dinowinking.png",
+    name: "Dino winking",
+    meaning: "The Open Door Dino sharing a playful, mischievous wink.",
+    subgroup: "Dino Expressions",
+    keywords: ["dino", "dinosaur", "wink", "winking", "playful", "mischievous"]
+  },
+  {
+    id: "dino-sending-love",
+    imageSrc: "assets/dinosendinglove.png",
+    name: "Dino sending love",
+    meaning: "The Open Door Dino sharing love, affection, or heartfelt support.",
+    subgroup: "Dino Expressions",
+    keywords: ["dino", "dinosaur", "love", "heart", "affection", "support", "caring"]
+  },
+  {
+    id: "dino-surprised",
+    imageSrc: "assets/dinosurprised.png",
+    name: "Dino surprised",
+    meaning: "The Open Door Dino reacting with sudden surprise or amazement.",
+    subgroup: "Dino Expressions",
+    keywords: ["dino", "dinosaur", "surprised", "amazed", "shocked", "unexpected"]
+  },
+  {
+    id: "dino-sad",
+    imageSrc: "assets/dinosad.png",
+    name: "Dino feeling sad",
+    meaning: "The Open Door Dino expressing sadness, sympathy, or disappointment.",
+    subgroup: "Dino Expressions",
+    keywords: ["dino", "dinosaur", "sad", "tear", "crying", "sympathy", "disappointed"]
+  },
+  {
+    id: "dino-sleepy",
+    imageSrc: "assets/dinosleepy.png",
+    name: "Dino sleepy",
+    meaning: "The Open Door Dino feeling tired, drowsy, or ready to rest.",
+    subgroup: "Dino Expressions",
+    keywords: ["dino", "dinosaur", "sleepy", "tired", "drowsy", "rest"]
+  },
+  {
+    id: "dino-frustrated",
+    imageSrc: "assets/dinofrustrated.png",
+    name: "Dino frustrated",
+    meaning: "The Open Door Dino expressing annoyance, frustration, or impatience.",
+    subgroup: "Dino Expressions",
+    keywords: ["dino", "dinosaur", "frustrated", "annoyed", "impatient", "grumpy"]
+  },
+  {
+    id: "border-collie-curious",
+    imageSrc: "assets/bordercolliecurious.png",
+    name: "Border collie curious",
+    meaning: "An alert Border collie showing friendly curiosity and interest.",
+    subgroup: "Dog Expressions",
+    keywords: ["dog", "border collie", "collie", "curious", "question", "interested", "breed"]
+  },
+  {
+    id: "poodle-excited",
+    imageSrc: "assets/poodleexcited.png",
+    name: "Poodle excited",
+    meaning: "A white poodle expressing bright, delighted excitement.",
+    subgroup: "Dog Expressions",
+    keywords: ["dog", "poodle", "excited", "delighted", "happy", "curly", "breed"]
+  },
+  {
+    id: "pug-surprised",
+    imageSrc: "assets/pugsurprised.png",
+    name: "Pug surprised",
+    meaning: "A pug reacting with wide-eyed surprise or amazement.",
+    subgroup: "Dog Expressions",
+    keywords: ["dog", "pug", "surprised", "amazed", "shocked", "breed"]
+  },
+  {
+    id: "bulldog-grumpy",
+    imageSrc: "assets/bulldoggrumpy.png",
+    name: "Bulldog grumpy",
+    meaning: "A lovable English bulldog expressing a distinctly grumpy mood.",
+    subgroup: "Dog Expressions",
+    keywords: ["dog", "bulldog", "english bulldog", "grumpy", "annoyed", "pout", "breed"]
+  },
+  {
+    id: "husky-singing",
+    imageSrc: "assets/huskysinging.png",
+    name: "Husky singing",
+    meaning: "A Siberian husky singing or howling with joyful enthusiasm.",
+    subgroup: "Dog Expressions",
+    keywords: ["dog", "husky", "siberian husky", "singing", "howling", "joy", "breed"]
+  },
+  {
+    id: "mustang-proud",
+    imageSrc: "assets/mustangproud.png",
+    name: "Mustang feeling proud",
+    meaning: "A confident mustang expressing pride, dignity, or accomplishment.",
+    subgroup: "Horse and Equine Expressions",
+    keywords: ["horse", "mustang", "proud", "confidence", "accomplishment", "equine", "breed"]
+  },
+  {
+    id: "haflinger-laughing",
+    imageSrc: "assets/haflingerlaughing.png",
+    name: "Haflinger laughing",
+    meaning: "A chestnut Haflinger horse laughing with cheerful delight.",
+    subgroup: "Horse and Equine Expressions",
+    keywords: ["horse", "haflinger", "laughing", "joy", "happy", "equine", "breed"]
+  },
+  {
+    id: "paint-horse-sending-love",
+    imageSrc: "assets/paintsendinglove.png",
+    name: "Paint horse sending love",
+    meaning: "A Paint horse sharing affection, appreciation, or heartfelt support.",
+    subgroup: "Horse and Equine Expressions",
+    keywords: ["horse", "paint horse", "pinto", "love", "heart", "affection", "equine", "breed"]
+  },
+  {
+    id: "zebra-surprised",
+    imageSrc: "assets/zebrasurprised.png",
+    name: "Zebra surprised",
+    meaning: "A zebra reacting with wide-eyed surprise or amazement.",
+    subgroup: "Horse and Equine Expressions",
+    keywords: ["zebra", "equine", "horse family", "surprised", "amazed", "shocked"]
+  },
+  {
+    id: "oak-tree-smiling",
+    imageSrc: "assets/oaktreesmiling.png",
+    name: "Oak tree smiling",
+    meaning: "A sturdy oak tree offering a warm, welcoming smile.",
+    subgroup: "Plant Expressions",
+    keywords: ["oak", "tree", "plant", "smile", "happy", "friendly", "nature"]
+  },
+  {
+    id: "sunflower-laughing",
+    imageSrc: "assets/sunflowerlaughing.png",
+    name: "Sunflower laughing",
+    meaning: "A bright sunflower laughing with cheerful joy.",
+    subgroup: "Plant Expressions",
+    keywords: ["sunflower", "flower", "plant", "laugh", "joy", "happy", "nature"]
+  },
+  {
+    id: "rose-blushing",
+    imageSrc: "assets/roseblushing.png",
+    name: "Rose blushing",
+    meaning: "A red rose expressing bashfulness, affection, or a shy compliment.",
+    subgroup: "Plant Expressions",
+    keywords: ["rose", "flower", "plant", "blush", "shy", "bashful", "love"]
+  },
+  {
+    id: "cactus-celebrating",
+    imageSrc: "assets/cactuscelebrating.png",
+    name: "Cactus celebrating",
+    meaning: "A cheerful cactus celebrating success or exciting news.",
+    subgroup: "Plant Expressions",
+    keywords: ["cactus", "plant", "celebrate", "party", "success", "confetti", "desert"]
+  },
+  {
+    id: "weeping-willow-tears",
+    imageSrc: "assets/weepingwillowtears.png",
+    name: "Weeping willow shedding tears",
+    meaning: "A weeping willow expressing sadness, sympathy, or emotional support.",
+    subgroup: "Plant Expressions",
+    keywords: ["willow", "weeping willow", "tree", "plant", "tears", "crying", "sad", "sympathy"]
+  },
+  {
+    id: "daisy-excited",
+    imageSrc: "assets/daisyexcited.png",
+    name: "Daisy excited",
+    meaning: "A white daisy expressing bright, delighted excitement.",
+    subgroup: "Plant Expressions",
+    keywords: ["daisy", "flower", "plant", "excited", "delighted", "happy"]
+  },
+  {
+    id: "houseplant-sleepy",
+    imageSrc: "assets/houseplantsleepy.png",
+    name: "Houseplant sleepy",
+    meaning: "A leafy houseplant feeling peaceful, tired, or ready to rest.",
+    subgroup: "Plant Expressions",
+    keywords: ["houseplant", "plant", "potted plant", "sleepy", "tired", "rest"]
+  },
+  {
+    id: "tulip-sending-love",
+    imageSrc: "assets/tulipsendinglove.png",
+    name: "Tulip sending love",
+    meaning: "A pink tulip sharing love, affection, or heartfelt appreciation.",
+    subgroup: "Plant Expressions",
+    keywords: ["tulip", "flower", "plant", "love", "heart", "affection", "appreciation"]
+  },
+  {
+    id: "fern-surprised",
+    imageSrc: "assets/fernsurprised.png",
+    name: "Fern surprised",
+    meaning: "A green fern reacting with sudden surprise or amazement.",
+    subgroup: "Plant Expressions",
+    keywords: ["fern", "plant", "surprised", "amazed", "shocked", "nature"]
+  },
+  {
+    id: "sprout-determined",
+    imageSrc: "assets/sproutdetermined.png",
+    name: "Sprout feeling determined",
+    meaning: "A young sprout expressing determination, resolve, and readiness to grow.",
+    subgroup: "Plant Expressions",
+    keywords: ["sprout", "seedling", "plant", "determined", "resolve", "growth", "motivated"]
   }
 ];

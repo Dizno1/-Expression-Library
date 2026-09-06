@@ -12,6 +12,7 @@
 
   const elements = {
     skipLink: document.querySelector(".skipLink"),
+    feedbackLink: document.getElementById("feedbackLink"),
     detailsToggle: document.getElementById("detailsToggle"),
     columnCount: document.getElementById("columnCount"),
     search: document.getElementById("expressionSearch"),
@@ -689,7 +690,25 @@
 
   function renderThemeTable(theme, container) {
     const items = itemsForTheme(theme);
-    renderExpressionTable(container, items, theme.title, "theme-" + theme.id, "No expressions are available in this theme.");
+    if (theme.id === "open-door-expressions") {
+      const subgroupOrder = ["Dino Expressions", "Dog Expressions", "Horse and Equine Expressions", "Plant Expressions"];
+      subgroupOrder.forEach(function (subgroup) {
+        const subgroupItems = items.filter(function (item) { return item.subgroup === subgroup; });
+        if (!subgroupItems.length) {
+          return;
+        }
+        const section = document.createElement("section");
+        section.className = "openDoorSubgroup";
+        const heading = document.createElement("h4");
+        heading.textContent = subgroup;
+        const tableContainer = document.createElement("div");
+        renderExpressionTable(tableContainer, subgroupItems, subgroup, "open-door-subtable-" + safeId(subgroup), "No expressions are available in this collection.");
+        section.append(heading, tableContainer);
+        container.appendChild(section);
+      });
+    } else {
+      renderExpressionTable(container, items, theme.title, "theme-" + theme.id, "No expressions are available in this theme.");
+    }
     const imageItems = items.filter(function (item) { return item.imageSrc; });
     if (imageItems.length) {
       const downloads = document.createElement("details");
@@ -832,6 +851,11 @@
   elements.skipLink.addEventListener("click", function (event) {
     event.preventDefault();
     elements.search.focus();
+  });
+
+  elements.feedbackLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    document.getElementById("feedbackHeading").focus();
   });
 
   elements.search.addEventListener("input", renderSuggestions);

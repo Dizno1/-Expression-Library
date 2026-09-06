@@ -10,7 +10,8 @@ The main `index.html` experience includes:
 - Official English CLDR 48 short names and search keywords
 - An editable combo box with selectable expression suggestions
 - Search by name, meaning, feeling, theme, type, and keyword
-- Original Dino and breed-specific dog and horse expressions with 16-pixel inline copying, accessible HTML, plain-text fallbacks, and full-resolution downloads
+- 40 original Dino, dog, horse and equine, flower, tree, and plant expressions organized into four accessible subtables
+- Open Door image copying at 16 pixels with accessible HTML, plain-text fallbacks, and downloadable 768-pixel images
 - A separate Open Door clipboard test page comparing PNG, accessible HTML, and combined clipboard formats
 - Enter-to-copy from suggestions and expression tables
 - Search Results, Frequently Used, and Favorites tables
