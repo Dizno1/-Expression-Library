@@ -28,6 +28,8 @@
     favoriteLast: document.getElementById("favoriteLastButton"),
     themeSections: document.getElementById("themeSections"),
     resetThemeOrder: document.getElementById("resetThemeOrderButton"),
+    feedbackForm: document.getElementById("feedbackForm"),
+    feedbackConfirmation: document.getElementById("feedbackConfirmation"),
     status: document.getElementById("status")
   };
 
@@ -278,6 +280,45 @@
     window.setTimeout(function () {
       elements.status.textContent = message;
     }, 40);
+  }
+
+  async function copyPlainText(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch (_error) {
+      const temporary = document.createElement("textarea");
+      temporary.value = text;
+      temporary.setAttribute("aria-hidden", "true");
+      temporary.style.position = "fixed";
+      temporary.style.left = "-9999px";
+      document.body.appendChild(temporary);
+      temporary.select();
+      const copied = document.execCommand("copy");
+      temporary.remove();
+      return copied;
+    }
+  }
+
+  function feedbackValue(data, name) {
+    return String(data.get(name) || "Not answered").trim() || "Not answered";
+  }
+
+  function buildFeedbackResponse(data) {
+    return [
+      "Expression Library feedback",
+      "",
+      "Overall experience: " + feedbackValue(data, "overallExperience"),
+      "Application used for pasting: " + feedbackValue(data, "application"),
+      "Screen reader used: " + feedbackValue(data, "screenReader"),
+      "Easy to find, copy, and paste: " + feedbackValue(data, "easyToUse"),
+      "Open Door image appeared: " + feedbackValue(data, "imageAppeared"),
+      "Image appeared at a useful size: " + feedbackValue(data, "usefulSize"),
+      "Expression name announced after pasting: " + feedbackValue(data, "nameAnnounced"),
+      "Enjoyed using the library: " + feedbackValue(data, "enjoyed"),
+      "Requested animals, breeds, or expressions: " + feedbackValue(data, "requests"),
+      "Other comments: " + feedbackValue(data, "comments")
+    ].join("\n");
   }
 
   function cancelSuggestionAnnouncement() {
@@ -866,6 +907,26 @@
     renderThemes();
     elements.resetThemeOrder.focus();
     announce("Default theme order restored.");
+  });
+
+  elements.feedbackForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+    const response = buildFeedbackResponse(new FormData(elements.feedbackForm));
+    const copied = await copyPlainText(response);
+    const message = copied
+      ? "Feedback response copied. Paste it into the Slack thread, an email, or another message."
+      : "The feedback response could not be copied. Please try again.";
+    elements.feedbackConfirmation.hidden = false;
+    elements.feedbackConfirmation.textContent = message;
+    announce(message);
+  });
+
+  elements.feedbackForm.addEventListener("reset", function () {
+    window.setTimeout(function () {
+      elements.feedbackConfirmation.hidden = true;
+      elements.feedbackConfirmation.textContent = "";
+      announce("Feedback form cleared.");
+    }, 0);
   });
 
   elements.detailsToggle.checked = detailedDescriptions;

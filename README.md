@@ -19,6 +19,7 @@ The main `index.html` experience includes:
 - Brief screen-reader announcements by default
 - Optional meanings, types, and compatibility information
 - Theme tables that can be shown, hidden, and reordered
+- An accessible feedback form that copies a structured response for Slack, email, or another message
 - Saved preferences, usage counts, favorites, table order, and open themes
 - Keyboard, high-contrast, reduced-motion, narrow-screen, and magnification support
 

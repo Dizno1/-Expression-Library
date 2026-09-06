@@ -27,7 +27,7 @@ h2 { margin-bottom: 0.5rem; font-size: clamp(1.4rem, 3vw, 1.9rem); line-height: 
 h3 { margin-bottom: 0; font-size: 1.2rem; }
 .introduction { max-width: 54rem; margin-bottom: 0; color: var(--muted); font-size: 1.15rem; }
 
-.instructions, .controlPanel, .searchPanel, .lastCopied, .permanentTableSection, .themesSection { margin-bottom: 1.25rem; padding: clamp(1rem, 3vw, 1.5rem); background: var(--surface); border: 0.08rem solid var(--border); border-radius: 0.65rem; box-shadow: var(--shadow); }
+.instructions, .controlPanel, .searchPanel, .lastCopied, .permanentTableSection, .themesSection, .feedbackSection { margin-bottom: 1.25rem; padding: clamp(1rem, 3vw, 1.5rem); background: var(--surface); border: 0.08rem solid var(--border); border-radius: 0.65rem; box-shadow: var(--shadow); }
 .instructions summary, .themeOptions summary { color: var(--green-dark); cursor: pointer; font-weight: 700; }
 .instructions summary { font-size: 1.15rem; }
 .instructionsContent { padding-top: 1rem; }
@@ -77,13 +77,25 @@ input:focus, select:focus, button:focus-visible, summary:focus-visible, [tabinde
 .emptyCell { background: var(--page); }
 .emptyMessage { margin: 0.75rem 0 0; padding: 1rem; background: var(--surface-alt); border-left: 0.3rem solid var(--green); }
 
+.feedbackGrid { display: grid; grid-template-columns: repeat(2, minmax(16rem, 1fr)); gap: 1rem; }
+.feedbackField { margin-bottom: 1rem; }
+.feedbackField input, .feedbackField textarea { display: block; width: 100%; margin-top: 0.35rem; }
+textarea { padding: 0.6rem 0.7rem; background: var(--surface); color: var(--text); border: 0.12rem solid var(--green-dark); border-radius: 0.35rem; font: inherit; resize: vertical; }
+textarea:focus { outline: 0.2rem solid var(--focus); outline-offset: 0.18rem; }
+.feedbackSection fieldset { margin: 0 0 1rem; padding: 0.75rem 1rem 1rem; border: 0.08rem solid var(--border); border-radius: 0.35rem; }
+.feedbackSection legend { padding: 0 0.35rem; font-weight: 700; }
+.feedbackSection fieldset label { display: inline-flex; align-items: center; margin: 0.35rem 1.1rem 0.2rem 0; font-weight: 400; }
+.feedbackSection input[type="radio"] { width: 1.25rem; min-height: 1.25rem; margin-right: 0.4rem; }
+.feedbackActions { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+.feedbackConfirmation { margin: 1rem 0 0; padding: 0.75rem; background: var(--surface-alt); border-left: 0.3rem solid var(--green); font-weight: 700; }
+
 footer { padding: 2rem 0 2.5rem; color: var(--muted); }
 .siteBrand { margin: 0; font-weight: 700; }
 .visuallyHidden { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
 [hidden] { display: none !important; }
 
 @media (max-width: 48rem) {
-  .preferencesGrid { grid-template-columns: 1fr; }
+  .preferencesGrid, .feedbackGrid { grid-template-columns: 1fr; }
   .themesTitleRow, .themeHeader { display: block; }
   .themesTitleRow > button, .themeHeader > button { width: 100%; margin-top: 0.75rem; }
 }
@@ -97,5 +109,5 @@ footer { padding: 2rem 0 2.5rem; color: var(--muted); }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media (forced-colors: active) {
-  .instructions, .controlPanel, .searchPanel, .lastCopied, .permanentTableSection, .themesSection { border: 0.12rem solid CanvasText; }
+  .instructions, .controlPanel, .searchPanel, .lastCopied, .permanentTableSection, .themesSection, .feedbackSection { border: 0.12rem solid CanvasText; }
 }

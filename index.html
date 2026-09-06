@@ -83,6 +83,83 @@
       </div>
       <div id="themeSections"></div>
     </section>
+    <section class="feedbackSection" aria-labelledby="feedbackHeading">
+      <h2 id="feedbackHeading">Give feedback</h2>
+      <p>Answer any questions you want. Then copy your response and paste it into the Slack thread, an email, or another message.</p>
+      <form id="feedbackForm">
+        <div class="feedbackGrid">
+          <div class="feedbackField">
+            <label for="feedbackRating">Overall experience</label>
+            <select id="feedbackRating" name="overallExperience">
+              <option value="">Choose a rating</option>
+              <option value="Excellent">Excellent</option>
+              <option value="Good">Good</option>
+              <option value="Fair">Fair</option>
+              <option value="Poor">Poor</option>
+            </select>
+          </div>
+          <div class="feedbackField">
+            <label for="feedbackApplication">Where did you paste expressions?</label>
+            <input id="feedbackApplication" name="application" type="text" autocomplete="off" placeholder="Word, Outlook, Slack, Facebook, or another application">
+          </div>
+          <div class="feedbackField">
+            <label for="feedbackScreenReader">Screen reader, if used</label>
+            <input id="feedbackScreenReader" name="screenReader" type="text" autocomplete="off" placeholder="JAWS, NVDA, VoiceOver, Narrator, or another screen reader">
+          </div>
+        </div>
+
+        <fieldset>
+          <legend>Was it easy to find, copy, and paste an expression?</legend>
+          <label><input type="radio" name="easyToUse" value="Yes"> Yes</label>
+          <label><input type="radio" name="easyToUse" value="Somewhat"> Somewhat</label>
+          <label><input type="radio" name="easyToUse" value="No"> No</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Did the Open Door image appear?</legend>
+          <label><input type="radio" name="imageAppeared" value="Yes"> Yes</label>
+          <label><input type="radio" name="imageAppeared" value="No"> No</label>
+          <label><input type="radio" name="imageAppeared" value="Not tested"> Not tested</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Did the image appear at a useful size?</legend>
+          <label><input type="radio" name="usefulSize" value="Yes"> Yes</label>
+          <label><input type="radio" name="usefulSize" value="No"> No</label>
+          <label><input type="radio" name="usefulSize" value="Not sure"> Not sure</label>
+          <label><input type="radio" name="usefulSize" value="Not tested"> Not tested</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>If you used a screen reader, was the expression name announced after pasting?</legend>
+          <label><input type="radio" name="nameAnnounced" value="Yes"> Yes</label>
+          <label><input type="radio" name="nameAnnounced" value="No"> No</label>
+          <label><input type="radio" name="nameAnnounced" value="Sometimes"> Sometimes</label>
+          <label><input type="radio" name="nameAnnounced" value="Not tested"> Not tested</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Did you enjoy using the library?</legend>
+          <label><input type="radio" name="enjoyed" value="Yes"> Yes</label>
+          <label><input type="radio" name="enjoyed" value="Somewhat"> Somewhat</label>
+          <label><input type="radio" name="enjoyed" value="No"> No</label>
+        </fieldset>
+
+        <div class="feedbackField">
+          <label for="feedbackRequests">Animals, breeds, or expressions you would like next</label>
+          <textarea id="feedbackRequests" name="requests" rows="4"></textarea>
+        </div>
+        <div class="feedbackField">
+          <label for="feedbackComments">Other comments</label>
+          <textarea id="feedbackComments" name="comments" rows="5"></textarea>
+        </div>
+        <div class="feedbackActions">
+          <button id="copyFeedbackButton" type="submit">Copy feedback response</button>
+          <button id="clearFeedbackButton" class="secondaryButton" type="reset">Clear feedback form</button>
+        </div>
+        <p id="feedbackConfirmation" class="feedbackConfirmation" hidden></p>
+      </form>
+    </section>
   </main>
   <div id="status" class="visuallyHidden" role="status" aria-live="polite"></div>
   <footer>
