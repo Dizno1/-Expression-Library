@@ -31,4 +31,4 @@ Open Door Design maintains the additional meanings, compatibility explanations, 
 
 ## Open Door Expressions
 
-Open Door Expressions are original image expressions created for this library. They are separate from the Unicode emoji repertoire and copy as images rather than text characters.
+Open Door Expressions are original image expressions created for this library. They are separate from the Unicode emoji repertoire and copy in PNG, accessible HTML, and plain-text formats. The receiving application decides which format to use.

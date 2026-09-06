@@ -41,6 +41,8 @@
   let currentResults = [];
   let lastCopied = null;
   let suggestionAnnouncementTimer = null;
+  const OPEN_DOOR_COPY_SIZE = 16;
+  const preparedOpenDoorImages = new Map();
 
   function readStorage(key, fallback) {
     try {
@@ -198,7 +200,7 @@
       name: record.name,
       meaning: record.meaning,
       type: "Open Door image expression",
-      compatibility: "It copies as an image only where image clipboard access is supported. Alternative text may not remain attached after pasting.",
+      compatibility: "It copies in image, accessible HTML, and plain-text formats. The receiving application decides which format to use.",
       group: "Open Door Expressions",
       subgroup: record.subgroup,
       keywords: record.keywords || [],
@@ -301,6 +303,57 @@
     return String(value).replace(/[^a-z0-9-]/gi, "-");
   }
 
+  function canvasBlob(canvas) {
+    return new Promise(function (resolve, reject) {
+      canvas.toBlob(function (blob) {
+        if (blob) {
+          resolve(blob);
+        } else {
+          reject(new Error("The inline image could not be created."));
+        }
+      }, "image/png");
+    });
+  }
+
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  async function prepareOpenDoorClipboard(item) {
+    if (preparedOpenDoorImages.has(item.imageSrc)) {
+      return preparedOpenDoorImages.get(item.imageSrc);
+    }
+    const response = await fetch(item.imageSrc);
+    if (!response.ok) {
+      throw new Error("The image could not be loaded.");
+    }
+    const sourceBlob = await response.blob();
+    const bitmap = await createImageBitmap(sourceBlob);
+    const canvas = document.createElement("canvas");
+    canvas.width = OPEN_DOOR_COPY_SIZE;
+    canvas.height = OPEN_DOOR_COPY_SIZE;
+    const context = canvas.getContext("2d");
+    context.clearRect(0, 0, OPEN_DOOR_COPY_SIZE, OPEN_DOOR_COPY_SIZE);
+    context.drawImage(bitmap, 0, 0, OPEN_DOOR_COPY_SIZE, OPEN_DOOR_COPY_SIZE);
+    bitmap.close();
+    const pngBlob = await canvasBlob(canvas);
+    const dataUrl = canvas.toDataURL("image/png");
+    const name = escapeHtml(item.name);
+    const html = '<img src="' + dataUrl + '" alt="' + name + '" width="' + OPEN_DOOR_COPY_SIZE + '" height="' + OPEN_DOOR_COPY_SIZE + '" style="display:inline-block;width:' + OPEN_DOOR_COPY_SIZE + 'px;height:' + OPEN_DOOR_COPY_SIZE + 'px;vertical-align:middle">';
+    const clipboardData = {
+      pngBlob,
+      htmlBlob: new Blob([html], { type: "text/html" }),
+      textBlob: new Blob(["[" + item.name + "]"], { type: "text/plain" })
+    };
+    preparedOpenDoorImages.set(item.imageSrc, clipboardData);
+    return clipboardData;
+  }
+
   function createExpressionCell(item, contextId, accessibleName) {
     const cell = document.createElement("td");
     const button = document.createElement("button");
@@ -389,12 +442,12 @@
         if (!window.ClipboardItem || !navigator.clipboard.write) {
           throw new Error("Image clipboard access is unavailable.");
         }
-        const response = await fetch(item.imageSrc);
-        if (!response.ok) {
-          throw new Error("The image could not be loaded.");
-        }
-        const blob = await response.blob();
-        await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
+        const clipboardData = await prepareOpenDoorClipboard(item);
+        await navigator.clipboard.write([new ClipboardItem({
+          "image/png": clipboardData.pngBlob,
+          "text/html": clipboardData.htmlBlob,
+          "text/plain": clipboardData.textBlob
+        })]);
       } else {
         await navigator.clipboard.writeText(item.character);
       }
@@ -426,7 +479,7 @@
     if (contextId !== "frequent") {
       renderFrequentlyUsed();
     }
-    announce(item.name + (item.imageSrc ? " image copied to the clipboard." : " copied to the clipboard."));
+    announce(item.name + (item.imageSrc ? " copied as a small inline image with accessible HTML and a text fallback." : " copied to the clipboard."));
   }
 
   function frequentItems() {

@@ -10,7 +10,7 @@ The main `index.html` experience includes:
 - Official English CLDR 48 short names and search keywords
 - An editable combo box with selectable expression suggestions
 - Search by name, meaning, feeling, theme, type, and keyword
-- Original Open Door image expressions with image-copy and download options
+- Original Open Door image expressions with 16-pixel inline copying, accessible HTML, plain-text fallbacks, and full-resolution downloads
 - A separate Open Door clipboard test page comparing PNG, accessible HTML, and combined clipboard formats
 - Enter-to-copy from suggestions and expression tables
 - Search Results, Frequently Used, and Favorites tables
