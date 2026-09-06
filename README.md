@@ -11,6 +11,7 @@ The main `index.html` experience includes:
 - An editable combo box with selectable expression suggestions
 - Search by name, meaning, feeling, theme, type, and keyword
 - Original Open Door image expressions with image-copy and download options
+- A separate Open Door clipboard test page comparing PNG, accessible HTML, and combined clipboard formats
 - Enter-to-copy from suggestions and expression tables
 - Search Results, Frequently Used, and Favorites tables
 - Compact tables containing 10 expressions per row by default

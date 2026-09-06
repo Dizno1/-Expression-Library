@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tests for copying accessible Open Door image expressions into other applications.">
+  <title>Open Door Clipboard Tests</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="OpenDoorClipboardTests.css">
+</head>
+<body>
+  <a class="skipLink" href="#test1">Skip to clipboard tests</a>
+  <header class="siteHeader">
+    <p class="eyebrow">Open Door Design</p>
+    <h1>Open Door Clipboard Tests</h1>
+    <p class="introduction">Compare three ways of copying Dino smiling as a small inline image.</p>
+  </header>
+  <main>
+    <section class="testInstructions">
+      <h2>How to test</h2>
+      <ol>
+        <li>Activate one copy button.</li>
+        <li>Move to Word or a chat application and paste on a blank line.</li>
+        <li>Check whether an image appears, whether it stays near text size, and what the screen reader announces.</li>
+        <li>Return here and repeat with the next test.</li>
+      </ol>
+      <p>These tests require the HTTPS version of the Expression Library. Focus remains on the activated button after copying.</p>
+    </section>
+
+    <div class="expressionPreview">
+      <img src="assets/dinosmiling.png" alt="Dino smiling, a friendly green T-Rex with a warm smile and small raised arms.">
+    </div>
+
+    <section class="clipboardTest">
+      <h2>Test 1 - Small PNG</h2>
+      <p>Copies only a 32-by-32-pixel PNG image. This tests size without alternative text or a text fallback.</p>
+      <button id="test1" type="button">Copy Dino smiling using Test 1</button>
+    </section>
+
+    <section class="clipboardTest">
+      <h2>Test 2 - Accessible HTML</h2>
+      <p>Copies a 32-by-32-pixel inline HTML image with alternative text. A plain-text fallback reads: [Dino smiling].</p>
+      <button id="test2" type="button">Copy Dino smiling using Test 2</button>
+    </section>
+
+    <section class="clipboardTest">
+      <h2>Test 3 - Combined formats</h2>
+      <p>Offers the receiving application a PNG image, accessible HTML, and plain text together.</p>
+      <button id="test3" type="button">Copy Dino smiling using Test 3</button>
+    </section>
+
+    <section class="testQuestions">
+      <h2>Questions for each test</h2>
+      <ol>
+        <li>Did anything paste?</li>
+        <li>Was it an image, the words [Dino smiling], or both?</li>
+        <li>Was the image close to inline text size?</li>
+        <li>Did the screen reader announce that something was inserted?</li>
+        <li>If an image was inserted, did its alternative text survive?</li>
+      </ol>
+    </section>
+
+    <p><a href="index.html">Return to the Expression Library</a></p>
+  </main>
+  <div id="clipboardStatus" class="visuallyHidden" role="status" aria-live="polite"></div>
+  <footer>
+    <p class="siteBrand">© 2026 Open Door Design. Advancing accessibility through education and innovation.</p>
+  </footer>
+  <script src="OpenDoorClipboardTests.js"></script>
+</body>
+</html>

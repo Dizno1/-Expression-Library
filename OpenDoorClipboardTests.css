@@ -1,0 +1,35 @@
+.testInstructions,
+.clipboardTest,
+.testQuestions {
+  margin-bottom: 1.25rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  background: var(--surface);
+  border: 0.08rem solid var(--border);
+  border-radius: 0.65rem;
+  box-shadow: var(--shadow);
+}
+
+.testInstructions li,
+.testQuestions li {
+  margin-bottom: 0.45rem;
+}
+
+.testInstructions p,
+.clipboardTest p {
+  color: var(--muted);
+}
+
+.expressionPreview {
+  width: 7rem;
+  margin: 0 auto 1.25rem;
+  padding: 0.75rem;
+  background: var(--surface);
+  border: 0.08rem solid var(--border);
+  border-radius: 0.65rem;
+}
+
+.expressionPreview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
