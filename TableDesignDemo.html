@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demo of a compact accessible expression table with optional screen-reader details.">
+  <title>Compact Expression Table Demo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="table-design-demo.css">
+</head>
+<body>
+  <a class="skipLink" href="#main">Skip to expression table demo</a>
+
+  <header class="siteHeader">
+    <p class="eyebrow">Open Door Design</p>
+    <h1>Compact Expression Table Demo</h1>
+    <p class="introduction">Each table cell contains one expression. Press Enter on an expression to copy it to the clipboard.</p>
+  </header>
+
+  <main id="main">
+    <section class="demoSettings" aria-labelledby="settingsHeading">
+      <h2 id="settingsHeading">Table preferences</h2>
+
+      <div class="preference">
+        <input id="detailsToggle" type="checkbox">
+        <label for="detailsToggle">Detailed screen-reader descriptions</label>
+        <p id="detailsHelp">Off announces only the expression name and button role. On also announces its meaning and type.</p>
+      </div>
+
+      <div class="preference">
+        <label for="columnCount">Expressions per row</label>
+        <select id="columnCount">
+          <option value="5">5 expressions</option>
+          <option value="10">10 expressions</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="demoTableSection" aria-labelledby="expressionsHeading">
+      <h2 id="expressionsHeading">Laughing and playful expressions</h2>
+      <p id="tableInstructions">Navigate using table commands. Each cell contains one expression button. Press Enter or Space to copy it.</p>
+
+      <div class="expressionTableWrapper" tabindex="0" role="region" aria-label="Scrollable expression table">
+        <table id="expressionTable" aria-describedby="tableInstructions">
+          <caption>Laughing and playful expressions</caption>
+          <tbody id="expressionTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="demoQuestions" aria-labelledby="questionsHeading">
+      <h2 id="questionsHeading">Questions for this test</h2>
+      <ol>
+        <li>With details off, does JAWS announce only the expression name and button?</li>
+        <li>With details on, does JAWS announce the meaning and type after the button name?</li>
+        <li>Can every cell be reached with normal table commands?</li>
+        <li>Does Enter copy only the selected expression?</li>
+        <li>Is five or ten expressions per row more comfortable?</li>
+      </ol>
+    </section>
+  </main>
+
+  <div id="demoStatus" class="visuallyHidden" role="status" aria-live="polite"></div>
+
+  <footer>
+    <p class="siteBrand">© 2026 Open Door Design. Advancing accessibility through education and innovation.</p>
+  </footer>
+
+  <script src="table-design-demo.js"></script>
+</body>
+</html>

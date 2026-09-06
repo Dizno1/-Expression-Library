@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A screen-reader-first library for finding, understanding, and copying emoji, emoticons, kaomoji, symbols, and flags.">
+  <title>Expression Library</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skipLink" href="#expressionSearch">Skip to expression search</a>
+  <header class="siteHeader">
+    <p class="eyebrow">Open Door Design</p>
+    <h1>Expression Library</h1>
+    <p class="introduction">Find an expression by what it means, copy it, and paste it into any application that accepts it.</p>
+  </header>
+  <main id="main">
+    <details class="instructions">
+      <summary>How to use the Expression Library</summary>
+      <div class="instructionsContent">
+        <p>Type in the Find an expression edit combo. Use Down Arrow and Up Arrow to review suggestions. Press Enter on a suggestion to copy it.</p>
+        <p>To browse, open a theme table and move through its expression buttons. Press Enter or Space to copy an expression. Frequently Used updates whenever an expression is copied.</p>
+        <p>Unicode expressions copy as text. Open Door image expressions copy as images where image clipboard access is supported. Alternative text may not remain attached after pasting an image into another application.</p>
+      </div>
+    </details>
+    <section class="controlPanel">
+      <h2 id="preferencesHeading">Preferences</h2>
+      <div class="preferencesGrid">
+        <div class="preference">
+          <input id="detailsToggle" type="checkbox">
+          <label for="detailsToggle">Detailed screen-reader descriptions</label>
+          <p>Off announces the expression name and button role. On also announces meaning, type, and compatibility.</p>
+        </div>
+        <div class="preference">
+          <label for="columnCount">Expressions per row</label>
+          <select id="columnCount">
+            <option value="10">10 expressions</option>
+            <option value="5">5 expressions</option>
+          </select>
+        </div>
+      </div>
+    </section>
+    <section class="searchPanel" role="search" aria-labelledby="findHeading">
+      <h2 id="findHeading">Find an expression</h2>
+      <div class="comboWrapper">
+        <label for="expressionSearch">Search by name, meaning, feeling, theme, or topic</label>
+        <input id="expressionSearch" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="searchSuggestions" aria-describedby="searchHelp" autocomplete="off" placeholder="Try laughing, dinosaur, warning, or Ireland">
+        <p id="searchHelp">Type to receive suggestions. Use the Arrow keys to choose one and press Enter to copy it. Press Enter without choosing a suggestion to show all matches.</p>
+        <ul id="searchSuggestions" class="suggestions" role="listbox" aria-label="Expression suggestions" hidden></ul>
+      </div>
+      <div class="searchActions">
+        <button id="showMatchesButton" type="button">Show all matches</button>
+        <button id="clearSearchButton" class="secondaryButton" type="button">Clear search</button>
+      </div>
+    </section>
+    <section id="lastCopiedSection" class="lastCopied" hidden>
+      <h2 id="lastCopiedHeading">Last copied</h2>
+      <p id="lastCopiedText"></p>
+      <button id="favoriteLastButton" class="secondaryButton" type="button"></button>
+    </section>
+    <section id="searchResultsSection" class="permanentTableSection" hidden>
+      <h2 id="searchResultsHeading">Search Results</h2>
+      <p id="searchResultsSummary" tabindex="-1"></p>
+      <div id="searchResultsTable"></div>
+    </section>
+    <section class="permanentTableSection">
+      <h2 id="frequentHeading">Frequently Used</h2>
+      <p>Your 20 most frequently copied expressions appear here automatically.</p>
+      <div id="frequentTable"></div>
+    </section>
+    <section class="permanentTableSection">
+      <h2 id="favoritesHeading">Favorites</h2>
+      <p>Add the last copied expression to this table using the button in Last copied.</p>
+      <div id="favoritesTable"></div>
+    </section>
+    <section class="themesSection">
+      <div class="themesTitleRow">
+        <div>
+          <h2 id="themesHeading">Expression themes</h2>
+          <p>Open only the tables you want. Move favorite themes nearer the top and the library will remember their order.</p>
+        </div>
+        <button id="resetThemeOrderButton" class="secondaryButton" type="button">Restore default theme order</button>
+      </div>
+      <div id="themeSections"></div>
+    </section>
+  </main>
+  <div id="status" class="visuallyHidden" role="status" aria-live="polite"></div>
+  <footer>
+    <p class="siteBrand">© 2026 Open Door Design. Advancing accessibility through education and innovation.</p>
+  </footer>
+  <script src="unicode-expressions.js"></script>
+  <script src="expressions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

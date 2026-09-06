@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Screen-reader interaction tests for copying expressions from accessible tables.">
+  <title>Expression Table Interaction Tests</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="interaction-tests.css">
+</head>
+<body>
+  <a class="skipLink" href="#main">Skip to interaction tests</a>
+
+  <header class="siteHeader">
+    <p class="eyebrow">Open Door Design</p>
+    <h1>Expression Table Interaction Tests</h1>
+    <p class="introduction">Compare three ways of navigating to an expression and pressing Enter to copy it.</p>
+  </header>
+
+  <main id="main">
+    <section class="testInstructions" aria-labelledby="instructionsHeading">
+      <h2 id="instructionsHeading">Testing instructions</h2>
+      <ol>
+        <li>Use each table with the Virtual Cursor on first.</li>
+        <li>Navigate to an expression using the method stated before its table.</li>
+        <li>Press Enter and listen for the copy confirmation.</li>
+        <li>Paste into Word or another application and confirm that only the expression was copied.</li>
+        <li>Notice where focus remains and whether Forms Mode turns on.</li>
+      </ol>
+      <p>The main Expression Library has not been changed. These tests use the same five expressions so only the interaction method changes.</p>
+    </section>
+
+    <section class="testSection" aria-labelledby="testOneHeading">
+      <h2 id="testOneHeading">Test 1: The expression is a button</h2>
+      <p>Navigate as a normal table. In the Expression column, the expression itself is a button. Press Enter or Space to copy it. No separate Action column is used.</p>
+      <p>Optional menu test: while focused on an expression, press Shift+F10 or the Applications key for more actions.</p>
+      <table>
+        <caption>Test 1 - Native table with expression buttons</caption>
+        <thead>
+          <tr>
+            <th scope="col">Expression</th>
+            <th scope="col">Meaning</th>
+            <th scope="col">Type</th>
+          </tr>
+        </thead>
+        <tbody id="buttonTableBody"></tbody>
+      </table>
+    </section>
+
+    <section class="testSection" aria-labelledby="testTwoHeading">
+      <h2 id="testTwoHeading">Test 2: The table row receives focus</h2>
+      <p>Press Tab to move to each complete row. Press Enter while the row has focus to copy its expression. Also try reaching a row with normal JAWS table navigation and pressing Enter.</p>
+      <table>
+        <caption>Test 2 - Native table with focusable rows</caption>
+        <thead>
+          <tr>
+            <th scope="col">Expression</th>
+            <th scope="col">Name</th>
+            <th scope="col">Meaning</th>
+          </tr>
+        </thead>
+        <tbody id="rowTableBody"></tbody>
+      </table>
+    </section>
+
+    <section class="testSection" aria-labelledby="testThreeHeading">
+      <h2 id="testThreeHeading">Test 3: Interactive grid</h2>
+      <p>Press Tab once to enter the grid. Use Up Arrow and Down Arrow to move among expression rows. Press Enter to copy the focused expression. Press Tab again to leave the grid.</p>
+      <table id="expressionGrid" role="grid" aria-label="Test 3 - Interactive expression grid">
+        <caption>Test 3 - Interactive grid with row focus</caption>
+        <thead>
+          <tr role="row">
+            <th role="columnheader" scope="col">Expression</th>
+            <th role="columnheader" scope="col">Name</th>
+            <th role="columnheader" scope="col">Meaning</th>
+          </tr>
+        </thead>
+        <tbody id="gridBody"></tbody>
+      </table>
+    </section>
+
+    <section class="testNotes" aria-labelledby="notesHeading">
+      <h2 id="notesHeading">Questions to answer</h2>
+      <ol>
+        <li>Which test required the fewest keystrokes?</li>
+        <li>Which test gave the clearest table and expression announcements?</li>
+        <li>Did any test unexpectedly turn Forms Mode on or off?</li>
+        <li>After copying, did focus remain on the same expression?</li>
+        <li>Did Shift+F10 open the optional menu in Test 1?</li>
+      </ol>
+    </section>
+  </main>
+
+  <div id="actionMenu" class="actionMenu" role="menu" aria-label="Expression actions" hidden>
+    <button type="button" role="menuitem" data-menu-action="copy">Copy expression</button>
+    <button type="button" role="menuitem" data-menu-action="copy-name">Copy expression with name</button>
+    <button type="button" role="menuitem" data-menu-action="favorite">Add to test favorites</button>
+  </div>
+
+  <div id="testStatus" class="visuallyHidden" role="status" aria-live="polite"></div>
+
+  <footer>
+    <p class="siteBrand">© 2026 Open Door Design. Advancing accessibility through education and innovation.</p>
+  </footer>
+
+  <script src="interaction-tests.js"></script>
+</body>
+</html>

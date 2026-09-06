@@ -1,0 +1,99 @@
+.demoSettings,
+.demoTableSection,
+.demoQuestions {
+  margin-bottom: 2rem;
+  padding: clamp(1rem, 4vw, 2rem);
+  background: var(--surface);
+  border: 0.08rem solid var(--border);
+  border-radius: 0.65rem;
+  box-shadow: var(--shadow);
+}
+
+.preference + .preference {
+  margin-top: 1.5rem;
+}
+
+.preference input[type="checkbox"] {
+  width: 1.35rem;
+  min-height: 1.35rem;
+  margin: 0 0.45rem 0 0;
+  vertical-align: middle;
+}
+
+.preference select {
+  display: block;
+  min-height: 2.75rem;
+  margin-top: 0.4rem;
+  padding: 0.45rem 2rem 0.45rem 0.65rem;
+  background: var(--surface);
+  color: var(--text);
+  border: 0.12rem solid var(--green-dark);
+  border-radius: 0.35rem;
+  font: inherit;
+}
+
+.preference select:focus-visible,
+.preference input:focus-visible {
+  outline: 0.2rem solid var(--focus);
+  outline-offset: 0.18rem;
+}
+
+#detailsHelp {
+  margin: 0.35rem 0 0 1.9rem;
+  color: var(--muted);
+}
+
+.expressionTableWrapper {
+  overflow-x: auto;
+}
+
+.expressionTableWrapper:focus {
+  outline: 0.2rem solid var(--focus);
+  outline-offset: 0.18rem;
+}
+
+#expressionTable {
+  width: 100%;
+  min-width: 32rem;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+#expressionTable caption {
+  padding: 0 0 0.75rem;
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+#expressionTable td {
+  min-width: 5.5rem;
+  padding: 0.45rem;
+  border: 0.08rem solid var(--border);
+  text-align: center;
+}
+
+.compactExpressionButton {
+  width: 100%;
+  min-width: 3.25rem;
+  min-height: 4rem;
+  padding: 0.35rem;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.demoQuestions li {
+  margin-bottom: 0.45rem;
+}
+
+@media (max-width: 40rem) {
+  #expressionTable {
+    min-width: 28rem;
+  }
+
+  .compactExpressionButton {
+    min-height: 3.5rem;
+    font-size: 1.7rem;
+  }
+}
